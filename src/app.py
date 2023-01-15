@@ -12,7 +12,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return 'All is well...'
+    return 'Server online', 200
 
 
 @app.route('/twilio/receiveMessage', methods=['POST'])
