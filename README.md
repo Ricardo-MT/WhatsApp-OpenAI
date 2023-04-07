@@ -3,7 +3,7 @@
 
 # WhatsApp-OpenAI Connection
 Hi everyone, this is repository for my personal demo project on connecting Twilio and OpenAI to provide answers to all the users questions using OpenAI GPT-3. This is written in `Python` and served with `Flask`. This bot can only handle:
-* text messgaes
+* text messages
 
 ### Youtube
 I have recorded a quick video on the setup of this chat-bot, in case you want to replicate the work, you can watch it [here]().

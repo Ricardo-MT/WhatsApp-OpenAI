@@ -20,19 +20,21 @@ def text_complition(prompt: str) -> dict:
         - dict
     '''
     try:
-        response = openai.Completion.create(
-            model='text-davinci-003',
-            prompt=f'Human: {prompt}\nAI: ',
-            temperature=0.9,
-            max_tokens=150,
-            top_p=1,
+        response = openai.ChatCompletion.create(
+            model='gpt-3.5-turbo',
+            # prompt=f'Human: {prompt}\nAI: ',
+            messages=[
+            {"role": "user", "content": prompt}
+            ],
+            temperature=0.2,
+            max_tokens=1000,
             frequency_penalty=0,
-            presence_penalty=0.6,
-            stop=['Human:', 'AI:']
+            presence_penalty=0.5,
+            # stop=['Human:', 'AI:']
         )
         return {
             'status': 1,
-            'response': response['choices'][0]['text']
+            'response': response['choices'][0]['message']["content"]
         }
     except:
         return {
